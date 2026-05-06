@@ -1,43 +1,37 @@
-/* Tu CSS original con los cambios solicitados - SIN NADA BLANCO */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #0E0F13;      /* fondo oscuro, no blanco */
+  background: #0E0F13;
   color: #E7E9ED;
-  font-size: 16px;          /* texto base más grande */
+  font-size: 16px;
 }
 
-/* CONTENEDOR */
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding-top: 80px;        /* ANTES: 240px. AHORA: más arriba */
+  padding-top: 80px;
   display: flex;
   justify-content: center;
 }
 
-/* GRID */
 .left {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px 25px;           /* ANTES: 35px 25px. AHORA: menos espacio vertical */
+  gap: 8px 25px;           /* Reduje aún más el gap vertical (antes 15px) */
   width: 100%;
 }
 
-/* FULL */
 .full {
   grid-column: span 2;
 }
 
-/* HEADER */
 .header-card {
-  background: #15181c;      /* fondo gris oscuro, nada blanco */
+  background: #15181c;
   padding: 35px;
   border-radius: 14px;
   text-align: center;
 }
 
-/* FOTO MÁS GRANDE */
 .profile-top img {
   width: 170px;
   height: 170px;
@@ -46,17 +40,15 @@ body {
   margin-bottom: 15px;
 }
 
-/* TITULOS */
 h1 {
   color: #E54982;
   margin-bottom: 5px;
-  font-size: 1.8rem;        /* más grande */
+  font-size: 1.8rem;
 }
 
-/* SUBTITULO REAL */
 h2 {
   color: #d72969;
-  font-size: 1.1rem;        /* antes 15px */
+  font-size: 1.1rem;
   font-weight: 500;
   margin: 2px 0;
 }
@@ -66,27 +58,58 @@ h3 {
   margin-bottom: 6px;
   border-left: 3px solid #E54982;
   padding-left: 8px;
-  font-size: 1.2rem;        /* más grande */
+  font-size: 1.2rem;
+  margin-top: 0;          /* elimina cualquier margen superior */
 }
 
-/* TEXTO */
 p {
   margin: 2px 0;
-  font-size: 1rem;          /* antes 14px */
+  font-size: 1rem;
   line-height: 1.35;
 }
 
-/* SECCIONES */
+/* Elimina márgenes extra en todas las secciones */
 .section {
   margin: 0;
+  padding: 0;
 }
 
-/* ARREGLO DE HUECOS GRANDES */
-.section.full {
-  margin-bottom: 10px;
+/* Ajuste específico para que Languages no genere espacio extra */
+.section:last-of-type {
+  margin-bottom: 0;
 }
 
-/* LINKS */
+/* Para reducir espacio entre About y Education: ambos son .section
+   Como el gap ya es 8px, el espacio entre filas es mínimo.
+   Si aún ves espacio, puede ser por los bordes o padding de las tarjetas.
+   Agrego esto para forzar que las secciones no tengan margen inferior adicional */
+.section h3 + p,
+.section h3 + h2,
+.section h2 + p {
+  margin-top: 0;
+}
+
+/* Skills y Soft Skills están dentro de la misma .section, entonces no hay gap ahí.
+   El espacio entre Soft Skills y Languages (que es otra .section) se controla con gap.
+   El espacio entre Languages y Contact Me también. */
+
+/* Ajuste adicional para el último elemento de cada sección */
+.section > :last-child {
+  margin-bottom: 0;
+}
+
+/* Para asegurar que Soft Skills y Contact Me estén más cerca:
+   Languages es la sección intermedia; reducimos su margen inferior */
+.section:nth-of-type(6) {  /* Languages es la 6ta .section en tu HTML */
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* También reducimos el espacio después de Skills (que contiene Soft Skills) */
+.section:nth-of-type(5) {  /* Skills es la 5ta .section */
+  margin-bottom: 0;
+}
+
 a {
   color: #E7E9ED;
   text-decoration: none;
@@ -101,7 +124,6 @@ a:visited {
   color: #E7E9ED;
 }
 
-/* CONTACT */
 .contact a {
   display: flex;
   align-items: center;
@@ -114,7 +136,6 @@ a:visited {
   height: 20px;
 }
 
-/* SKILLS */
 .skills {
   display: flex;
   flex-wrap: wrap;
@@ -125,10 +146,9 @@ a:visited {
   background: #83899020;
   padding: 4px 9px;
   border-radius: 6px;
-  font-size: 0.85rem;       /* antes 12px */
+  font-size: 0.85rem;
 }
 
-/* BOTONES */
 .projects-btn {
   display: inline-block;
   margin-top: 10px;
