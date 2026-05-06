@@ -1,17 +1,17 @@
-/* Tu CSS original con solo los cambios solicitados */
+/* Tu CSS original con los cambios solicitados - SIN NADA BLANCO */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #0E0F13;
+  background: #0E0F13;      /* fondo oscuro, no blanco */
   color: #E7E9ED;
-  font-size: 16px;   /* base más grande */
+  font-size: 16px;          /* texto base más grande */
 }
 
 /* CONTENEDOR */
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding-top: 80px;   /* antes 240px - ahora más arriba */
+  padding-top: 80px;        /* ANTES: 240px. AHORA: más arriba */
   display: flex;
   justify-content: center;
 }
@@ -20,7 +20,7 @@ body {
 .left {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px 25px;      /* antes 35px 25px - menos espacio vertical */
+  gap: 15px 25px;           /* ANTES: 35px 25px. AHORA: menos espacio vertical */
   width: 100%;
 }
 
@@ -31,7 +31,7 @@ body {
 
 /* HEADER */
 .header-card {
-  background: #15181c;
+  background: #15181c;      /* fondo gris oscuro, nada blanco */
   padding: 35px;
   border-radius: 14px;
   text-align: center;
@@ -50,13 +50,13 @@ body {
 h1 {
   color: #E54982;
   margin-bottom: 5px;
-  font-size: 1.8rem;   /* más grande */
+  font-size: 1.8rem;        /* más grande */
 }
 
 /* SUBTITULO REAL */
 h2 {
   color: #d72969;
-  font-size: 1.1rem;   /* antes 15px */
+  font-size: 1.1rem;        /* antes 15px */
   font-weight: 500;
   margin: 2px 0;
 }
@@ -66,14 +66,14 @@ h3 {
   margin-bottom: 6px;
   border-left: 3px solid #E54982;
   padding-left: 8px;
-  font-size: 1.2rem;   /* antes sin definir, ahora más grande */
+  font-size: 1.2rem;        /* más grande */
 }
 
 /* TEXTO */
 p {
   margin: 2px 0;
-  font-size: 1rem;     /* antes 14px */
-  line-height: 1.4;
+  font-size: 1rem;          /* antes 14px */
+  line-height: 1.35;
 }
 
 /* SECCIONES */
@@ -125,7 +125,7 @@ a:visited {
   background: #83899020;
   padding: 4px 9px;
   border-radius: 6px;
-  font-size: 0.85rem;  /* antes 12px, ligeramente más grande */
+  font-size: 0.85rem;       /* antes 12px */
 }
 
 /* BOTONES */
