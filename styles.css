@@ -1,3 +1,4 @@
+/* RESET */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -5,42 +6,45 @@ body {
   color: #E7E9ED;
 }
 
-/* NAV */
-nav {
-  padding: 15px 40px;
-  display: flex;
-  justify-content: space-between;
-}
-
-nav a {
-  color: #E7E9ED;
-  text-decoration: none;
-  margin-left: 20px;
-}
-
-/* LAYOUT PRINCIPAL */
+/* CONTENEDOR PRINCIPAL (CENTRADO REAL) */
 .container {
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
-  padding: 40px;
-  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 80px;
+  gap: 60px;
+  animation: fadeIn 1s ease-in;
 }
 
-/* IZQUIERDA */
+/* IZQUIERDA (2 COLUMNAS) */
 .left {
   flex: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
-.left h1 {
+/* OCUPA TODA LA FILA */
+.full {
+  grid-column: span 2;
+}
+
+/* TITULOS */
+h1 {
   color: #E54982;
+  margin-bottom: 10px;
 }
 
-.section {
-  margin-bottom: 20px;
-}
-
-.section h3 {
+h3 {
   color: #E54982;
   margin-bottom: 5px;
+}
+
+/* SECCIONES */
+.section {
+  margin-bottom: 10px;
 }
 
 /* DERECHA */
@@ -49,48 +53,48 @@ nav a {
   text-align: center;
 }
 
+/* IMAGEN PERFIL (CÍRCULO REAL) */
 .right img {
   width: 180px;
   height: 180px;
   object-fit: cover;
   border-radius: 50%;
-  border: 3px solid #E54982;
 }
-/* ESPACIO SUPERIOR */
-.container {
-  display: flex;
-  justify-content: center;
-  padding: 80px 40px 40px 40px; /* espacio arriba */
-  gap: 60px;
+
+/* ICONOS (ARREGLADOS) */
+.icons {
+  margin-top: 20px;
 }
-/* COLUMNAS */
-.left {
-  flex: 2;
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 columnas */
-  gap: 20px;
-}
-.full {
-  grid-column: span 2; /* ocupa toda la fila */
-}
-/* ICONOS (IMAGENES) */
+
 .icons img {
   width: 28px;
-  margin: 10px;
-  transition: transform 0.2s;
+  height: 28px;
+  object-fit: contain;
+  margin: 8px;
+  cursor: pointer;
+  display: inline-block;
+  border: none;       /* sin borde */
+  background: none;   /* sin fondo */
 }
+
 .icons img:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
-.icons a {
-  margin: 0 10px;
-  font-size: 22px;
-  color: #E7E9ED;
-  text-decoration: none;
+/* SKILLS COMO BURBUJAS */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-/* PROYECTOS */
+.skill {
+  background: #83899020; /* gris sutil con transparencia */
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
 /* BOTON PROYECTOS */
 .projects-btn {
   display: inline-block;
@@ -107,33 +111,20 @@ nav a {
   background: #E54982;
   color: white;
 }
-.projects {
-  margin-top: 20px;
-}
 
-.project {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 15px;
-}
-
-.project img {
-  width: 60px;
-  border-radius: 6px;
-}
-
-.project a {
-  color: #E7E9ED;
+/* LINKS */
+a {
   text-decoration: none;
 }
 
-/* ANIMACIÓN */
-.container {
-  animation: fadeIn 1s ease-in;
-}
-
+/* ANIMACION */
 @keyframes fadeIn {
-  from {opacity:0; transform: translateY(20px);}
-  to {opacity:1; transform: translateY(0);}
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
