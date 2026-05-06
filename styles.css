@@ -65,7 +65,17 @@ button {
   transform: translateY(-10px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
+.cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
 @media (max-width: 600px) {
   .hero {
     height: auto;
