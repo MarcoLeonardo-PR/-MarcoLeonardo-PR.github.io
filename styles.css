@@ -1,238 +1,146 @@
-/* styles.css - Diseño original: rosado, negro y blanco */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Tu CSS original con solo los cambios solicitados */
 body {
-  background: #ffffff;      /* fondo blanco */
+  margin: 0;
   font-family: 'Poppins', sans-serif;
-  padding: 2rem;
-  font-size: 1.05rem;       /* texto base más grande */
-  line-height: 1.5;
-  color: #000000;           /* texto negro */
+  background: #0E0F13;
+  color: #E7E9ED;
+  font-size: 16px;   /* base más grande */
 }
 
+/* CONTENEDOR */
 .container {
   max-width: 1100px;
   margin: 0 auto;
-}
-
-.left {
-  background: white;
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  padding: 1.8rem 2rem;
-}
-
-/* Header más arriba: sin margen superior */
-.profile-top {
+  padding-top: 80px;   /* antes 240px - ahora más arriba */
   display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  margin-top: 0;           /* eliminado margen superior */
-  margin-bottom: 1.5rem;
+  justify-content: center;
 }
 
+/* GRID */
+.left {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px 25px;      /* antes 35px 25px - menos espacio vertical */
+  width: 100%;
+}
+
+/* FULL */
+.full {
+  grid-column: span 2;
+}
+
+/* HEADER */
+.header-card {
+  background: #15181c;
+  padding: 35px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+/* FOTO MÁS GRANDE */
 .profile-top img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
+  width: 170px;
+  height: 170px;
   border-radius: 50%;
-  border: 2px solid #ff69b4;   /* borde rosado */
+  object-fit: cover;
+  margin-bottom: 15px;
 }
 
-.profile-top h1 {
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #000000;
+/* TITULOS */
+h1 {
+  color: #E54982;
+  margin-bottom: 5px;
+  font-size: 1.8rem;   /* más grande */
+}
+
+/* SUBTITULO REAL */
+h2 {
+  color: #d72969;
+  font-size: 1.1rem;   /* antes 15px */
+  font-weight: 500;
+  margin: 2px 0;
+}
+
+h3 {
+  color: #E54982;
+  margin-bottom: 6px;
+  border-left: 3px solid #E54982;
+  padding-left: 8px;
+  font-size: 1.2rem;   /* antes sin definir, ahora más grande */
+}
+
+/* TEXTO */
+p {
+  margin: 2px 0;
+  font-size: 1rem;     /* antes 14px */
+  line-height: 1.4;
+}
+
+/* SECCIONES */
+.section {
   margin: 0;
 }
 
-/* Secciones: menos espacio entre ellas */
-.section {
-  margin-bottom: 1rem;      /* reducido respecto al original */
-  border-bottom: 1px solid #f0f0f0;
-  padding-bottom: 0.5rem;
+/* ARREGLO DE HUECOS GRANDES */
+.section.full {
+  margin-bottom: 10px;
 }
 
-.section:last-of-type {
-  border-bottom: none;
-  margin-bottom: 0;
-}
-
-.section h3 {
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: #ff69b4;           /* rosado para títulos de sección */
-  margin: 0.6rem 0 0.4rem 0;
-}
-
-.section h2 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin: 0.4rem 0 0.1rem 0;
-  color: #000000;
-}
-
-.section p, .section a {
-  font-size: 0.98rem;
-  margin: 0.2rem 0;
-  color: #000000;
-}
-
-.section a {
-  color: #ff69b4;           /* enlaces rosados */
+/* LINKS */
+a {
+  color: #E7E9ED;
   text-decoration: none;
-}
-.section a:hover {
-  text-decoration: underline;
-}
-
-/* Skills */
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 0.3rem 0 0.6rem 0;
-}
-
-.skill {
-  background: #fce4ec;      /* fondo rosado muy claro */
-  padding: 0.2rem 0.9rem;
-  border-radius: 30px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: #000000;
-  border: 1px solid #ff69b4;
-}
-
-/* Contacto */
-.contact {
-  display: flex;
-  gap: 1.5rem;
-  margin: 0.4rem 0 0.2rem;
-}
-
-.contact a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  background: #fce4ec;
-  padding: 0.3rem 1rem;
-  border-radius: 40px;
   transition: 0.2s;
-  font-size: 0.9rem;
-  color: #000000;
-  border: 1px solid #ff69b4;
 }
 
-.contact a:hover {
-  background: #ffb6c1;
+a:hover {
+  color: #E54982;
+}
+
+a:visited {
+  color: #E7E9ED;
+}
+
+/* CONTACT */
+.contact a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
 }
 
 .contact img {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  object-fit: cover;
+  width: 20px;
+  height: 20px;
 }
 
-/* Botones Projects / Resume / Volver */
-.full {
+/* SKILLS */
+.skills {
   display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
   flex-wrap: wrap;
+  gap: 6px;
 }
 
-.projects-btn, .index-btn {
-  background: #ff69b4;      /* botón rosado */
-  color: white;
-  padding: 0.5rem 1.2rem;
-  border-radius: 40px;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.9rem;
-  transition: 0.2s;
+.skill {
+  background: #83899020;
+  padding: 4px 9px;
+  border-radius: 6px;
+  font-size: 0.85rem;  /* antes 12px, ligeramente más grande */
+}
+
+/* BOTONES */
+.projects-btn {
   display: inline-block;
-  border: none;
-  cursor: pointer;
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 7px 16px;
+  border: 1px solid #E54982;
+  color: #E54982;
+  border-radius: 6px;
+  transition: 0.3s;
 }
 
-.projects-btn:hover, .index-btn:hover {
-  background: #e75480;      /* rosado más oscuro */
-}
-
-/* Página de proyectos */
-.projects {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin: 1rem 0;
-}
-
-.project {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background: #fce4ec;
-  padding: 0.6rem;
-  border-radius: 1rem;
-  border: 1px solid #ff69b4;
-}
-
-.project img {
-  width: 55px;
-  height: 55px;
-  border-radius: 12px;
-  object-fit: cover;
-  background: #fff;
-}
-
-.project a {
-  font-size: 1rem;
-  font-weight: 500;
-  text-decoration: none;
-  color: #ff69b4;
-}
-
-nav {
-  margin-bottom: 1rem;
-}
-
-nav a {
-  background: #ff69b4;
-  padding: 0.3rem 1rem;
-  border-radius: 2rem;
-  text-decoration: none;
+.projects-btn:hover {
+  background: #E54982;
   color: white;
-  font-size: 0.9rem;
-}
-
-h1 {
-  font-size: 1.9rem;
-  margin-bottom: 0.8rem;
-  color: #000000;
-}
-
-/* Ajustes adicionales para reducir espacio entre Soft Skills y Contact Me */
-.section:has(h3:contains("Languages")) {
-  margin-bottom: 0.5rem;
-}
-
-@media (max-width: 700px) {
-  body {
-    padding: 1rem;
-  }
-  .left {
-    padding: 1rem;
-  }
-  .profile-top h1 {
-    font-size: 1.3rem;
-  }
 }
