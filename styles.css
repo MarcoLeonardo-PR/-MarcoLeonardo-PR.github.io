@@ -1,3 +1,4 @@
+/* Nueva implementación con columnas - respeta colores originales */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -15,21 +16,28 @@ body {
 }
 
 .left {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px 25px;           /* Reduje aún más el gap vertical (antes 15px) */
+  column-count: 2;
+  column-gap: 25px;
   width: 100%;
 }
 
+/* Evita que los bloques se dividan entre columnas */
+.header-card,
+.section,
 .full {
-  grid-column: span 2;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin-bottom: 16px;  /* Ajusta este valor para más o menos espacio */
 }
 
+/* Header ocupa ambas columnas */
 .header-card {
+  column-span: all;
   background: #15181c;
   padding: 35px;
   border-radius: 14px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .profile-top img {
@@ -59,7 +67,7 @@ h3 {
   border-left: 3px solid #E54982;
   padding-left: 8px;
   font-size: 1.2rem;
-  margin-top: 0;          /* elimina cualquier margen superior */
+  margin-top: 0;
 }
 
 p {
@@ -68,85 +76,10 @@ p {
   line-height: 1.35;
 }
 
-/* Elimina márgenes extra en todas las secciones */
-.section {
-  margin: 0;
-  padding: 0;
-}
-
-/* Ajuste específico para que Languages no genere espacio extra */
-.section:last-of-type {
-  margin-bottom: 0;
-}
-
-/* Para reducir espacio entre About y Education: ambos son .section
-   Como el gap ya es 8px, el espacio entre filas es mínimo.
-   Si aún ves espacio, puede ser por los bordes o padding de las tarjetas.
-   Agrego esto para forzar que las secciones no tengan margen inferior adicional */
-.section h3 + p,
-.section h3 + h2,
-.section h2 + p {
-  margin-top: 0;
-}
-
-/* Skills y Soft Skills están dentro de la misma .section, entonces no hay gap ahí.
-   El espacio entre Soft Skills y Languages (que es otra .section) se controla con gap.
-   El espacio entre Languages y Contact Me también. */
-
-/* Ajuste adicional para el último elemento de cada sección */
-.section > :last-child {
-  margin-bottom: 0;
-}
-
-/* Para asegurar que Soft Skills y Contact Me estén más cerca:
-   Languages es la sección intermedia; reducimos su margen inferior */
-.section:nth-of-type(6) {  /* Languages es la 6ta .section en tu HTML */
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-/* También reducimos el espacio después de Skills (que contiene Soft Skills) */
-.section:nth-of-type(5) {  /* Skills es la 5ta .section */
-  margin-bottom: 0;
-}
-
-a {
-  color: #E7E9ED;
-  text-decoration: none;
-  transition: 0.2s;
-}
-
-a:hover {
-  color: #E54982;
-}
-
-a:visited {
-  color: #E7E9ED;
-}
-
-.contact a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 6px;
-}
-
-.contact img {
-  width: 20px;
-  height: 20px;
-}
-
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.skill {
-  background: #83899020;
-  padding: 4px 9px;
-  border-radius: 6px;
-  font-size: 0.85rem;
+/* Botones también a ancho completo */
+.full {
+  column-span: all;
+  margin-top: 10px;
 }
 
 .projects-btn {
@@ -163,4 +96,39 @@ a:visited {
 .projects-btn:hover {
   background: #E54982;
   color: white;
+}
+
+/* Skills y otros elementos internos */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skill {
+  background: #83899020;
+  padding: 4px 9px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.contact a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.contact img {
+  width: 20px;
+  height: 20px;
+}
+
+a {
+  color: #E7E9ED;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #E54982;
 }
