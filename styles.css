@@ -7,67 +7,54 @@ body {
 
 /* NAV */
 nav {
-  background: #0E0F13;
-  padding: 15px;
-  text-align: center;
-  border-bottom: 1px solid #838990;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
 }
 
 nav a {
   color: #E7E9ED;
-  margin: 0 20px;
   text-decoration: none;
-  font-weight: 600;
+  margin-left: 20px;
 }
 
-/* HERO */
-.hero {
+/* LAYOUT PRINCIPAL */
+.container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 60px;
-  animation: fadeIn 1s ease-in;
+  padding: 40px;
+  gap: 40px;
 }
 
-.hero-text {
-  max-width: 500px;
+/* IZQUIERDA */
+.left {
+  flex: 2;
 }
 
-.hero h1 {
+.left h1 {
   color: #E54982;
 }
 
-.hero img {
-  width: 200px;
-  height: 200px;
+.section {
+  margin-bottom: 20px;
+}
+
+.section h3 {
+  color: #E54982;
+  margin-bottom: 5px;
+}
+
+/* DERECHA */
+.right {
+  flex: 1;
+  text-align: center;
+}
+
+.right img {
+  width: 180px;
+  height: 180px;
   object-fit: cover;
-  border-radius: 50%; /* círculo real */
+  border-radius: 50%;
   border: 3px solid #E54982;
-}
-
-/* SECCIONES */
-.section-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  padding: 30px;
-}
-
-.card {
-  background: #16181d;
-  padding: 15px;
-  border-radius: 10px;
-  border: 1px solid #838990;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card h3 {
-  color: #E54982;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px rgba(229,73,130,0.3);
 }
 
 /* ICONOS */
@@ -76,33 +63,40 @@ nav a {
 }
 
 .icons a {
-  margin-right: 10px;
-  font-size: 24px;
+  margin: 0 10px;
+  font-size: 22px;
   color: #E7E9ED;
+  text-decoration: none;
 }
 
 /* PROYECTOS */
-.cards-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+.projects {
+  margin-top: 20px;
 }
 
-.card img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 10px;
+.project {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.project img {
+  width: 60px;
+  border-radius: 6px;
+}
+
+.project a {
+  color: #E7E9ED;
+  text-decoration: none;
 }
 
 /* ANIMACIÓN */
+.container {
+  animation: fadeIn 1s ease-in;
+}
+
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from {opacity:0; transform: translateY(20px);}
+  to {opacity:1; transform: translateY(0);}
 }
