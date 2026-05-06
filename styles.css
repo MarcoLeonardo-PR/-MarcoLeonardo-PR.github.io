@@ -23,7 +23,7 @@ body {
   flex: 2;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 5px;
 }
 
 /* OCUPA TODA LA FILA */
