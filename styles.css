@@ -56,10 +56,31 @@ nav a {
   border-radius: 50%;
   border: 3px solid #E54982;
 }
-
-/* ICONOS */
-.icons {
-  margin-top: 15px;
+/* ESPACIO SUPERIOR */
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 80px 40px 40px 40px; /* espacio arriba */
+  gap: 60px;
+}
+/* COLUMNAS */
+.left {
+  flex: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columnas */
+  gap: 20px;
+}
+.full {
+  grid-column: span 2; /* ocupa toda la fila */
+}
+/* ICONOS (IMAGENES) */
+.icons img {
+  width: 28px;
+  margin: 10px;
+  transition: transform 0.2s;
+}
+.icons img:hover {
+  transform: scale(1.2);
 }
 
 .icons a {
@@ -70,6 +91,22 @@ nav a {
 }
 
 /* PROYECTOS */
+/* BOTON PROYECTOS */
+.projects-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 1px solid #E54982;
+  color: #E54982;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.projects-btn:hover {
+  background: #E54982;
+  color: white;
+}
 .projects {
   margin-top: 20px;
 }
