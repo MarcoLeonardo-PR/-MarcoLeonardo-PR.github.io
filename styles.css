@@ -9,7 +9,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding-top: 200px;
+  padding-top: 220px;
   display: flex;
   justify-content: center;
 }
@@ -18,23 +18,27 @@ body {
 .left {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 25px; /* más espacio horizontal */
+  gap: 30px; /* más aire horizontal */
   width: 100%;
 }
 
-/* FULL WIDTH */
+/* FULL */
 .full {
   grid-column: span 2;
 }
 
-/* FOTO ARRIBA */
-.profile-top {
+/* HEADER VISUAL */
+.header-card {
+  background: #141d2a;
+  padding: 30px;
+  border-radius: 12px;
   text-align: center;
 }
 
+/* FOTO */
 .profile-top img {
-  width: 140px;
-  height: 140px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 15px;
@@ -48,25 +52,47 @@ h1 {
 
 h2 {
   color: #d72969;
-  font-size: 14px; /* MÁS PEQUEÑO QUE H3 */
+  font-size: 13px;
   font-weight: 400;
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
 
 h3 {
   color: #E54982;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  border-left: 3px solid #E54982; /* línea elegante */
+  padding-left: 8px;
 }
 
 /* TEXTO */
 p {
-  margin: 4px 0;
+  margin: 3px 0;
   line-height: 1.4;
 }
 
 /* SECCIONES */
 .section {
-  margin-bottom: 5px; /* menos espacio vertical */
+  margin-bottom: 0; /* elimina espacios raros */
+}
+
+/* EVITA HUECOS GRANDES */
+.section:nth-child(odd) {
+  margin-top: 5px;
+}
+
+/* LINKS */
+a {
+  color: #E7E9ED;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+a:hover {
+  color: #E54982;
+}
+
+a:visited {
+  color: #E7E9ED;
 }
 
 /* CONTACT */
@@ -75,22 +101,11 @@ p {
   align-items: center;
   gap: 10px;
   margin-bottom: 8px;
-  color: #E7E9ED;
 }
 
 .contact img {
   width: 20px;
   height: 20px;
-}
-
-/* LINKS (QUITA MORADO) */
-a {
-  color: #E7E9ED;
-  text-decoration: none;
-}
-
-a:visited {
-  color: #E7E9ED;
 }
 
 /* SKILLS */
@@ -111,6 +126,7 @@ a:visited {
 .projects-btn {
   display: inline-block;
   margin-top: 15px;
+  margin-right: 10px;
   padding: 8px 18px;
   border: 1px solid #E54982;
   color: #E54982;
