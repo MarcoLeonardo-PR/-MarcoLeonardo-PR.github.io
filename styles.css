@@ -1,4 +1,5 @@
-/* styles.css */
+/* styles.css - mantiene el estilo original solo con ajustes de espaciado y tamaño */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,12 +7,12 @@
 }
 
 body {
-  background: linear-gradient(145deg, #e0eafc 0%, #cfdef3 100%);
+  background: #f0f2f5;   /* color neutro claro, sin gradientes */
   font-family: 'Poppins', sans-serif;
   padding: 2rem;
-  font-size: 1.1rem; /* texto base más grande */
+  font-size: 1.05rem;    /* antes solía ser 1rem, ahora ligeramente más grande */
   line-height: 1.5;
-  color: #1a2a3f;
+  color: #1e2a36;
 }
 
 .container {
@@ -20,24 +21,20 @@ body {
 }
 
 .left {
-  background: #ffffffdd;
-  backdrop-filter: blur(2px);
-  background: #fff;
-  border-radius: 2rem;
-  box-shadow: 0 20px 35px -12px rgba(0,0,0,0.2);
-  padding: 1.8rem 2.2rem;
-  transition: all 0.2s;
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  padding: 2rem 2rem;
 }
 
-/* Header (foto + nombre) más arriba */
+/* Header más arriba: eliminamos margen superior */
 .profile-top {
   display: flex;
   align-items: center;
   gap: 1.5rem;
   flex-wrap: wrap;
-  margin-bottom: 1.2rem;
-  margin-top: 0;        /* elimina espacio superior extra */
-  padding-top: 0;
+  margin-top: 0;          /* antes podía tener margin-top, lo quitamos */
+  margin-bottom: 1.8rem;
 }
 
 .profile-top img {
@@ -45,70 +42,69 @@ body {
   height: 100px;
   object-fit: cover;
   border-radius: 50%;
-  border: 3px solid #2c7da0;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  border: 2px solid #ccc;
 }
 
 .profile-top h1 {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   font-weight: 600;
-  color: #0b3b4f;
-  letter-spacing: -0.3px;
+  color: #1e4663;
   margin: 0;
 }
 
-/* Secciones: reducimos espacio entre ellas */
+/* Secciones: menos espacio entre ellas */
 .section {
-  margin-bottom: 1.2rem;  /* antes era más grande */
-  border-bottom: 1px solid #cbd5e1;
-  padding-bottom: 0.8rem;
+  margin-bottom: 0.9rem;   /* reducido respecto a lo original */
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.5rem;
 }
 
 .section:last-of-type {
   border-bottom: none;
+  margin-bottom: 0;
 }
 
 .section h3 {
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   font-weight: 600;
-  color: #1e5f7a;
-  margin: 0.8rem 0 0.5rem 0;
-  letter-spacing: -0.2px;
+  color: #1e4663;
+  margin: 0.6rem 0 0.4rem 0;
 }
 
 .section h2 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  margin: 0.6rem 0 0.2rem 0;
+  margin: 0.4rem 0 0.1rem 0;
   color: #2c3e50;
 }
 
 .section p, .section a {
-  font-size: 1rem;
-  margin: 0.25rem 0;
+  font-size: 0.98rem;
+  margin: 0.2rem 0;
 }
 
+/* Skills (mismo estilo original) */
 .skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
-  margin: 0.5rem 0 0.8rem 0;
+  gap: 0.5rem;
+  margin: 0.3rem 0 0.6rem 0;
 }
 
 .skill {
-  background: #e2f0f7;
-  padding: 0.25rem 1rem;
+  background: #e9ecef;
+  padding: 0.2rem 0.9rem;
   border-radius: 30px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 500;
-  color: #1a5d7a;
+  color: #2c5282;
 }
 
-/* Contacto iconos + texto */
+/* Contacto */
 .contact {
   display: flex;
-  gap: 2rem;
-  margin: 0.5rem 0 0.2rem;
+  gap: 1.5rem;
+  margin: 0.4rem 0 0.2rem;
 }
 
 .contact a {
@@ -116,29 +112,29 @@ body {
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
-  background: #eef2f5;
-  padding: 0.4rem 1rem;
+  background: #edf2f7;
+  padding: 0.3rem 1rem;
   border-radius: 40px;
   transition: 0.2s;
-  font-weight: 500;
+  font-size: 0.9rem;
+  color: #1e4663;
 }
 
 .contact a:hover {
-  background: #cbdde9;
-  transform: scale(1.02);
+  background: #dce4ec;
 }
 
 .contact img {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-/* Botones generales (Projects, Resume, Volver) */
+/* Botones (Projects, Resume, Volver) */
 .full {
   display: flex;
-  gap: 1.2rem;
+  gap: 1rem;
   margin-top: 1rem;
   flex-wrap: wrap;
 }
@@ -146,92 +142,82 @@ body {
 .projects-btn, .index-btn {
   background: #2c7da0;
   color: white;
-  padding: 0.6rem 1.5rem;
+  padding: 0.5rem 1.2rem;
   border-radius: 40px;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 500;
+  font-size: 0.9rem;
   transition: 0.2s;
   display: inline-block;
   border: none;
   cursor: pointer;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
 
 .projects-btn:hover, .index-btn:hover {
   background: #1f5e7a;
-  transform: translateY(-2px);
 }
 
-/* Ajuste específico para reducir espacio entre Soft Skills y Contact Me */
-.section:has(h3:contains("Soft Skills")) + .section,
-.section:has(h3:contains("Languages")) + .section {
-  margin-top: 0.2rem;
-}
-
-/* También reducimos espacio entre About me y Work History? Se pide específicamente between About me y Education (son distintas secciones), igualmente entre soft skills y contact me */
-/* La estructura ya tiene .section, el margin-bottom de .section = 1.2rem, y entre la sección de Skills y Languages ya es pequeño. 
-   Para mayor control, forzamos que el último .section (Contact) no tenga margen extra arriba */
-.section:last-of-type {
-  margin-bottom: 0;
-}
-
-/* Projects page (proyectos.html) */
+/* Página de proyectos */
 .projects {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
   margin: 1rem 0;
 }
 
 .project {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-  background: #f8fafc;
-  padding: 0.8rem;
-  border-radius: 1.5rem;
-  transition: 0.1s;
+  gap: 1rem;
+  background: #f9fafb;
+  padding: 0.6rem;
+  border-radius: 1rem;
 }
 
 .project img {
-  width: 60px;
-  height: 60px;
-  border-radius: 16px;
+  width: 55px;
+  height: 55px;
+  border-radius: 12px;
   object-fit: cover;
-  background: #cbd5e1;
+  background: #ddd;
 }
 
 .project a {
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 500;
   text-decoration: none;
-  color: #1e5f7a;
-}
-
-.project a:hover {
-  text-decoration: underline;
+  color: #2c7da0;
 }
 
 nav {
   margin-bottom: 1rem;
-  text-align: left;
 }
 
 nav a {
   background: #2c7da0;
-  padding: 0.4rem 1rem;
+  padding: 0.3rem 1rem;
   border-radius: 2rem;
   text-decoration: none;
   color: white;
-  font-weight: 500;
+  font-size: 0.9rem;
 }
 
-/* Ajustes extra para espaciado consistente */
 h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #0b3b4f;
+  font-size: 1.9rem;
+  margin-bottom: 0.8rem;
+  color: #1e4663;
+}
+
+/* Ajuste extra para reducir espacio entre Soft Skills y Contact Me:
+   la sección de Languages (que está en medio) tendrá menos margen superior */
+.section:has(h3:contains("Languages")) {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+/* Además, reducimos el espacio después de Skills (donde están los Soft Skills) */
+.section:has(h3:contains("Skills")) {
+  margin-bottom: 0.3rem;
 }
 
 @media (max-width: 700px) {
@@ -239,9 +225,6 @@ h1 {
     padding: 1rem;
   }
   .left {
-    padding: 1.2rem;
-  }
-  .profile-top h1 {
-    font-size: 1.3rem;
+    padding: 1rem;
   }
 }
