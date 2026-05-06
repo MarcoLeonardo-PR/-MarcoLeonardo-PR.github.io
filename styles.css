@@ -8,13 +8,13 @@ body {
 
 /* CONTENEDOR PRINCIPAL (CENTRADO REAL) */
 .container {
-  max-width: 1100px;
+  max-width: 1700px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 80px;
-  gap: 60px;
+  padding-top: 160px;
+  gap: 120px;
   animation: fadeIn 1s ease-in;
 }
 
@@ -23,7 +23,7 @@ body {
   flex: 2;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 40px;
 }
 
 /* OCUPA TODA LA FILA */
